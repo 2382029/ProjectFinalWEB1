@@ -45,7 +45,6 @@
             
             let valid = true;
 
-            // Validasi Nama
             const name = document.getElementById('name').value;
             const nameError = document.getElementById('nameError');
             if (name.length === 0 || name.length > 40) {
@@ -55,7 +54,6 @@
                 nameError.textContent = '';
             }
 
-            // Validasi Nomor Telepon
             const phone = document.getElementById('phone').value;
             const phoneError = document.getElementById('phoneError');
             const phoneRegex = /^[0-9]{1,15}$/;
@@ -66,7 +64,6 @@
                 phoneError.textContent = '';
             }
 
-            // Validasi Email
             const email = document.getElementById('email').value;
             const emailError = document.getElementById('emailError');
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -77,7 +74,6 @@
                 emailError.textContent = '';
             }
 
-            // Validasi Kata Sandi
             const password = document.getElementById('password').value;
             const passwordError = document.getElementById('passwordError');
             const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,16}$/;
@@ -94,7 +90,6 @@
             }
         });
 
-        // Tambahkan Event Listener untuk Input
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', function() {
                 const id = input.id;
