@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans p-5 text-base bg-gray-900 flex justify-center items-center min-h-screen flex-col m-0">
+
+    <header class="w-full text-center p-11 bg-gradient-to-br from-gray-900 to-gray-700 shadow-lg rounded-3xl mb-12 hover:translate-y-1 hover:shadow-xl transition-all duration-300">
+        <nav>
+            <h1 class="text-3xl text-white mb-6">A Simple Calculator</h1>
+            <a href="index.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Home</a>
+            <a href="about.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">About</a>
+            <a href="portfolio.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Portfolio</a>
+            <a href="calculator.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Calculator</a>
+            <a href="registration.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Registration</a>
+        </nav>
+    </header>
+
+    <div class="calculator grid grid-cols-4 gap-2 p-10 border border-gray-300 bg-white rounded-lg shadow-lg">
+        <p id="display" class="col-span-4 text-right text-lg p-3 border border-gray-300 bg-gray-100 rounded-md text-gray-700 font-impact">0</p>
+
+        <button onclick="press('7')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">7</button>
+        <button onclick="press('8')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">8</button>
+        <button onclick="press('9')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">9</button>
+        <button onclick="press('/')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">:</button>
+
+        <button onclick="press('4')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">4</button>
+        <button onclick="press('5')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">5</button>
+        <button onclick="press('6')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">6</button>
+        <button onclick="press('*')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">x</button>
+
+        <button onclick="press('1')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">1</button>
+        <button onclick="press('2')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">2</button>
+        <button onclick="press('3')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">3</button>
+        <button onclick="press('-')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">-</button>
+
+        <button onclick="press('0')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">0</button>
+        <button onclick="press('.')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">.</button>
+        <button onclick="clearConsole()" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">C</button>
+        <button onclick="press('+')" class="text-gray-700 p-5 text-xl cursor-pointer border border-gray-300 rounded-md font-impact hover:bg-gray-200">+</button>
+
+        <button class="col-span-4 p-5 text-xl cursor-pointer border border-gray-300 rounded-md bg-gray-700 text-white font-impact hover:bg-gray-600" onclick="calculate()">=</button>
+    </div>
+
+    <script>
+        let expression = ''; 
+
+        function press(value) {
+            expression += value;
+            updateDisplay();
+        }
+
+        function calculate() {
+            try {
+                const result = eval(expression);
+                expression = result.toString(); 
+                updateDisplay();
+            } catch (error) {
+                console.log("Error: Invalid Expression!"); 
+                expression = ''; 
+            }
+        }
+
+        function clearConsole() {
+            expression = ''; 
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("display").innerText = expression || 0;
+        }
+
+        console.log("Calculator Initialized");
+    </script>
+</body>
+
+</html>

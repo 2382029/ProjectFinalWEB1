@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #content-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('1-342.jpg');
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans p-5 text-base">
+    <header class="neon-shadow text-center p-10 bg-gradient-to-br from-gray-900 to-gray-700 shadow-lg rounded-3xl mb-12 hover:translate-y-1 hover:shadow-xl transition-all duration-300">
+        <h1 class="text-4xl font-bold text-white mb-8">Welcome to Karundeng's Website</h1>
+        <nav>
+            <a href="index.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Home</a>
+            <a href="about.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">About</a>
+            <a href="portfolio.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Portfolio</a>
+            <a href="calculator.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Calculator</a>
+            <a href="registration.html" class="text-lg mx-6 text-gray-200 uppercase tracking-wider hover:text-blue-400 hover:scale-110 hover:opacity-80 transition-all duration-300">Registration</a>
+        </nav>
+    </header>
+
+    <section id="content-section" 
+        class="p-12 mx-auto max-w-4xl border-2 border-blue-300 rounded-3xl shadow-lg text-white transition-all duration-300 hover:translate-y-4 hover:shadow-xl">
+        <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg">
+            <h2 class="text-4xl text-blue-400 text-center mb-6 pb-4 border-b-2 border-blue-400 font-bold">Daryl Grandy Karundeng</h2>
+            <p id="section-content" class="text-lg mt-5 text-justify leading-8"><b>Hello, I'm Daryl Karundeng!</b></p>
+            <p>Born in the vibrant city of Bandung, Cihampelas, I pursued my studies at Universitas Advent Indonesia.</p>
+            <p>This is a simple yet personal website I created to showcase my journey and projects. Feel free to explore and get to know me better!</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white text-center py-4 fixed bottom-0 w-full">
+        <p>&copy; 2024 Daryl Grandy Karundeng. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <section class="p-4 mt-8 text-center">
+        <p class="tagline">Creative Thinker | Tech Enthusiast | Solution-Oriented Developer</p>
+        <p class="intro">
+    </section>
+
+    <script>
+
+        function changeSectionContent(title, content) {
+            document.querySelector('#content-section h2').innerText = title;
+            document.querySelector('#section-content').innerText = content;
+        }
+    </script>
+</body>
+</html>
